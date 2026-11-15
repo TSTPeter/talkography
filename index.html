@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Talkography">
+<meta name="theme-color" content="#1f3a5f">
+<meta name="description" content="Talkography: a Harkness discussion tracker. Tap whoever speaks, and it maps and reports the conversation.">
+<title>Talkography</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header>
+  <h1>Talkography</h1>
+  <nav class="tabs" id="tabs" aria-label="Sections">
+    <button data-tab="setup">Setup</button>
+    <button data-tab="discuss">Discuss</button>
+    <button data-tab="report">Report</button>
+    <button data-tab="library">Library</button>
+  </nav>
+  <div class="spacer"></div>
+  <div class="clock"><b id="clock">0:00</b><small id="plan"></small></div>
+  <button class="btn" id="runBtn">Start</button>
+  <div class="menuwrap">
+    <button class="btn icon" id="menuBtn" aria-label="Menu" aria-haspopup="true" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <div class="menu" id="menu" role="menu" hidden></div>
+  </div>
+</header>
+<main id="main">
+  <section id="stage">
+    <svg id="room" viewBox="0 0 1000 660" preserveAspectRatio="xMidYMid meet" aria-label="Discussion map"></svg>
+    <div class="chooser" id="chooser"></div>
+  </section>
+  <div id="divider" role="separator" aria-orientation="vertical" aria-label="Resize the map and the panel" tabindex="0"></div>
+  <aside id="side"></aside>
+</main>
+<div class="present" id="present" hidden></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="vendor/echarts.min.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
